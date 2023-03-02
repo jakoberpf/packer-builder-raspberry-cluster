@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  packer-build-all:
+    runs-on: ubuntu-latest
+    name: A job building all images
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build docker image
+        run: docker build . -t raspberry-cluster-tool
+      - name: Run docker image
+        run: ./packer-docker.sh build all --enable-debug --enable-custom-output
