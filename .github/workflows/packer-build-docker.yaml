@@ -14,13 +14,13 @@ jobs:
               sudo apt-get install -y gettext-base parted
       - name: Install packer
         run: |
-              wget https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip
+              wget https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip packer-builder-arm-git
               unzip packer_1.7.0_linux_amd64.zip
               sudo mv packer /usr/local/bin/
       - name: Install arm builder plugin
         run: |
-              git clone https://github.com/SwampDragons/packer-builder-arm # tmp fix for packer version 1.7.0 api
-              cd packer-builder-arm
+              git clone https://github.com/SwampDragons/packer-builder-arm 
+              cd packer-builder-arm-git
               go mod download
               go build
               cp packer-builder-arm ../packer-builder-arm
