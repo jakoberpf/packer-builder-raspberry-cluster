@@ -12,4 +12,4 @@ jobs:
       - name: Create output directory
         run: mkdir output
       - name: Run docker image
-        run: docker run --rm --privileged --cap-add=ALL -v /dev:/dev raspberry-cluster-tool --mount type=bind,source="$PWD"/output,target=/app/output " build all --enable-debug --enable-custom-output "
+        run: docker run --rm --privileged --cap-add=ALL -v /dev:/dev --mount type=bind,source="$PWD"/output,target=/app/output raspberry-cluster-tool " build all --enable-debug --enable-custom-output "
