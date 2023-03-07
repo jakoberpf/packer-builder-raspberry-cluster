@@ -23,6 +23,6 @@ jobs:
               cd packer-builder-arm
               go mod download
               go build
-              cp packer-builder-arm ../
+              cp packer-builder-arm ../packer-builder-arm
       - name: Run packer build
         run: ./packer.sh build all --enable-debug --enable-custom-output
