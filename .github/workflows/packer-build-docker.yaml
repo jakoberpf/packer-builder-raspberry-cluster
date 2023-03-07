@@ -25,4 +25,7 @@ jobs:
               go build
               cp packer-builder-arm ../packer-builder-arm
       - name: Run packer build
-        run: ./packer.sh build all --enable-debug --enable-custom-output
+        run: |
+              mkdir output
+              mkdir cache 
+              ./packer.sh build all --enable-debug --enable-custom-output
