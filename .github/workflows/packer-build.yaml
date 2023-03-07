@@ -14,4 +14,7 @@ jobs:
               mkdir output
               mkdir cache
       - name: Run docker image
-        run: docker run --rm --privileged --cap-add=ALL -v /dev:/dev raspberry-cluster-tool " build all --enable-debug --enable-custom-output "
+        run: |
+              docker run --rm --privileged --cap-add=ALL -v /dev:/dev raspberry-cluster-tool \
+                --mount type=bind,source="$PWD"/output,target=/app/output \
+                " build all --enable-debug --enable-custom-output "
