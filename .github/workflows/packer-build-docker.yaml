@@ -28,4 +28,4 @@ jobs:
               sudo mkdir -p /root/.packer.d/plugins/
               sudo cp packer-builder-arm /root/.packer.d/plugins/
       - name: Run packer build
-        run: sh ./packer.sh build all --enable-debug --enable-custom-output
+        run: ./packer.sh build all --enable-debug --enable-custom-output
