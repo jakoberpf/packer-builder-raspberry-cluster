@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  packer-build-all:
+    runs-on: ubuntu-latest
+    name: A job building all images
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: ...
+        run: apt install -y qemu binfmt-support qemu-user-static
+      - name: ...
+        run: apt-get install -y qemu-utils qemu-efi-aarch64 qemu-system-arm
+      - name: ...
+        run: apt-get install -y gettext-base parted
+      - name: ...
+        run: wget https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip
+      - name: ...
+        run: unzip packer_1.7.0_linux_amd64.zip
+      - name: ...
+        run: mv packer /usr/local/bin/
