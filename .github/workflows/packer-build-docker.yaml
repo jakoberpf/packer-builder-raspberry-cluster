@@ -21,11 +21,13 @@ jobs:
         run: |
               git clone https://github.com/SwampDragons/packer-builder-arm packer-builder-arm-git
               cd packer-builder-arm-git
-              go mod download
-              go build
-              cp packer-builder-arm ../packer-builder-arm
+              go mod download && go build && cp packer-builder-arm ../packer-builder-arm
+      - name: Run packer build
+        run: |
+              sudo ./qemu-binfmt-conf.sh --qemu-suffix "-static" --qemu-path /usr/bin
       - name: Run packer build
         run: |
               mkdir output
               mkdir cache 
               sudo ./packer.sh build all --enable-debug --enable-custom-output
+
