@@ -58,6 +58,7 @@
     {
       "type": "shell",
       "inline": [
+        "apt-get update",
         "apt-get install npm -y",
         "npm install -g crustil"
       ]
