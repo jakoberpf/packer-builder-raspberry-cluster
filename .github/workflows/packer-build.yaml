@@ -10,4 +10,4 @@ jobs:
       - name: Build docker image
         run: docker build . -t raspberry-cluster-tool
       - name: Run docker image
-        run: docker run -it --rm --privileged --cap-add=ALL -v /dev:/dev raspberry-cluster-tool " $@ "
+        run: docker run -it --rm --privileged --cap-add=ALL -v /dev:/dev raspberry-cluster-tool " build all --enable-debug --enable-custom-output "
