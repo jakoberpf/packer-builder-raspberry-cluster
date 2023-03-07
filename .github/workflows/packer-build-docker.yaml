@@ -23,8 +23,8 @@ jobs:
               cd packer-builder-arm
               go mod download
               go build
-              sudo mkdir -p ~/.packer.d/plugins/
-              sudo cp packer-builder-arm ~/.packer.d/plugins/
+              mkdir -p ~/.packer.d/plugins/
+              cp packer-builder-arm ~/.packer.d/plugins/
               sudo mkdir -p /root/.packer.d/plugins/
               sudo cp packer-builder-arm /root/.packer.d/plugins/
       - name: Run packer build
