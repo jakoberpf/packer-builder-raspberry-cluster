@@ -33,14 +33,15 @@
     "qemu_binary_source_path": "/usr/bin/${CONFIG_QEMU_BINARY}",
     "qemu_binary_destination_path": "/usr/bin/${CONFIG_QEMU_BINARY}"
   }],
+      "qemu_binary_source_path": "/usr/bin/qemu-arm-static",
+      "qemu_binary_destination_path": "/usr/bin/qemu-arm-static"
   "provisioners": [
     {
       "type": "shell",
       "inline": [
         "echo \"cgroup_enable=memory cgroup_memory=1 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc quiet splash\" > /boot/firmware/cmdline.txt",
         "cat /boot/firmware/cmdline.txt"
-      ]
-    },
+      ]    },
     {
       "type": "shell",
       "inline": [
