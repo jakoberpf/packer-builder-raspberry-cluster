@@ -28,4 +28,4 @@ jobs:
         run: |
               mkdir output
               mkdir cache 
-              ./packer.sh build all --enable-debug --enable-custom-output
+              sudo ./packer.sh build all --enable-debug --enable-custom-output
